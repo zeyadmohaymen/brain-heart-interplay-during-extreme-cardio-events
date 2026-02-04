@@ -2,7 +2,7 @@
 
 This repository implements **Project 1: Brain Dynamics during «extreme» cardiovascular events** by combining (1) point-process HRV estimation, (2) time-resolved directional Brain–Heart Interplay (BHI) estimation, and (3) non-parametric statistics to quantify how **EEG–HRV coupling dynamics change around “extreme” cardiovascular events**.
 
-## Implementation / Methodology (as implemented here)
+## Implementation & Methodology
 
 1. **Load multi-subject EMO recordings**
    - Subject loading and summaries are handled by [`src.data_loader.load_subject`](src/data_loader.py) / [`src.data_loader.load_all_subjects`](src/data_loader.py) in [src/data_loader.py](src/data_loader.py).
