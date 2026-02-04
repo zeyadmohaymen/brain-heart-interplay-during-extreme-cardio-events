@@ -53,22 +53,25 @@ pip install -r requirements.txt
 
 ### 2) Dependencies (non-PyPI / external)
 
-#### `pointprocess` (local bindings)
-This project imports `pointprocess` from the local workspace path `pointprocess/build/` (see [experiment.ipynb](experiment.ipynb)):
-- The notebook appends `pointprocess/build/` to `sys.path`
-- Then imports:
-  - `compute_single_regression`, `compute_full_regression`, `compute_spectral_analysis`, etc.
+#### `pointprocess` (Barbieri et al. point-process HRV)
+This project uses the **Barbieri et al. point-process HRV implementation** via local bindings under `pointprocess/build/` (imported in [experiment.ipynb](experiment.ipynb) by appending that path to `sys.path`).
+
+Upstream reference:
+- https://github.com/andreabonvini/pointprocess
 
 If `import pointprocess` fails, verify that:
-- The `pointprocess/build/` directory exists
-- It contains the compiled Python bindings for your machine/Python version
+- `pointprocess/build/` exists in this repository/workspace
+- the bindings were built for your **current** Python version / macOS architecture
 
-#### SDG BHI model (MATLAB)
-Directional BHI is computed via MATLAB scripts in [BHI_SDG/](BHI_SDG/):
-- Entry-point used in the notebook: `SDGM_LFHF(...)`
-- The notebook starts MATLAB via `matlab.engine` and adds `BHI_SDG/` to MATLAB’s path
+#### SDGM BHI model (Catrambone et al. Brain–Heart Interaction Indexes)
+Directional BHI is computed using the **SDG/SDGM MATLAB implementation** (invoked as `SDGM_LFHF(...)`) and stored under [results/bhi/](results/bhi/).
 
-See: [BHI_SDG/README.md](BHI_SDG/README.md)
+Upstream reference:
+- https://github.com/CatramboneVincenzo/Brain-Heart-Interaction-Indexes
+
+Notes:
+- MATLAB is required; the notebook starts MATLAB via `matlab.engine` and adds [BHI_SDG/](BHI_SDG/) to the MATLAB path.
+- Please refer to the upstream repository (and [BHI_SDG/README.md](BHI_SDG/README.md)) for model details and licensing/attribution.
 
 ### 3) Data & results layout
 - Input data is expected under [data/](data/) in per-subject folders (e.g., `data/i24/...`).
