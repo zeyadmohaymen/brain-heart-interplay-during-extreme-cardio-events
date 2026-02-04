@@ -1,0 +1,14 @@
+numpy
+scipy
+pandas
+matplotlib
+seaborn
+mne
+statsmodels
+hrvanalysis
+jupyter
+ipykernel
+
+# Notes:
+# - matlab.engine is provided by a local MATLAB installation (not via pip).
+# - pointprocess/ is used from the local workspace (pointprocess/build/), not PyPI.
